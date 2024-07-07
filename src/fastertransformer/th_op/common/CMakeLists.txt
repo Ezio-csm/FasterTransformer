@@ -13,7 +13,7 @@
 # limitations under the License.
 
 add_library(th_common STATIC
-    DynamicDecodeOp.cc WeightOnlyQuantOps.cc GptOps.cc)
+    DynamicDecodeOp.cc WeightOnlyQuantOps.cc GptOps.cc GemmAllreduceOp.cc GemmAllgatherOp.cc GemmReduceScatterOp.cc)
 set_property(TARGET th_common PROPERTY POSITION_INDEPENDENT_CODE  ON)
 target_link_libraries(th_common PRIVATE "${TORCH_LIBRARIES}"
     cublasMMWrapper cutlass_preprocessors DynamicDecodeLayer gpt_kernels memory_utils
